@@ -1,0 +1,30 @@
+{
+    "groups": [
+        {
+            "name": "GOOGLE SERVICES",
+            "hosts": [
+                {
+                    "name": "Google Search", 
+                    "url": "https://www.google.com"
+                },
+                {
+                    "name": "Google Drive", 
+                    "url": "https://drive.google.com"
+                }
+            ]
+        },
+        {
+            "name": "FACEBOOK SERVICES",
+            "hosts": [
+                {
+                    "name": "Facebook", 
+                    "url": "https://facebook.com"
+                },
+                {
+                    "name": "Instagram", 
+                    "url": "https://instagram.com"
+                }
+            ]
+        }
+    ]
+}
