@@ -1,6 +1,7 @@
 use std::env;
 use std::fs::File;
 use std::io::prelude::*;
+use std::io::ErrorKind::NotFound;
 use std::time::Duration;
 use serde::Deserialize;
 
@@ -35,12 +36,33 @@ fn main() {
     }
 
     if let Err(e) = file {
-        panic!("Error opening file: {:?}", e);
+        if e.kind() == NotFound {
+            println!("config.json file not found!");
+        } else {
+            println!("Error reading config file: {}", e.to_string());
+        }
+        println!("Please provide a valid config file.");
+        println!("You can check the documentation at https://github.com/selatotal/healthcheck-rs");
+        return;
     }
 
     let mut contents = String::new();
-    file.unwrap().read_to_string(&mut contents).unwrap();
-    let config: Config = serde_json::from_str(&contents).unwrap();
+    if let Err(e) = file.unwrap().read_to_string(&mut contents){
+        println!("Invalid config file: {}", e.to_string());
+        println!("Please provide a valid config file.");
+        println!("You can check the documentation at https://github.com/selatotal/healthcheck-rs");
+        return;        
+    }
+
+    let config: Config = match serde_json::from_str(&contents) {
+        Ok(config) => config,
+        Err(e) => {
+            println!("Invalid config file: {}", e.to_string());
+            println!("Please provide a valid config file.");
+            println!("You can check the documentation at https://github.com/selatotal/healthcheck-rs");
+            return;            
+        },
+    };
 
     // Doing requests
     let client = reqwest::blocking::Client::builder()
