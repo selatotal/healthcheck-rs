@@ -1,0 +1,78 @@
+{
+    "groups": [
+        {
+            "name": "INGRESS PUBLICA",
+            "hosts": [
+                {
+                    "name": "customer-service", 
+                    "url": "http://148497bf-ubisafe-publicser-1084-1505059021.us-east-1.elb.amazonaws.com/rest/v1/customer/health"
+                },
+                {
+                    "name": "central-service", 
+                    "url": "http://148497bf-ubisafe-publicser-1084-1505059021.us-east-1.elb.amazonaws.com/rest/v1/central/health"
+                },
+                {
+                    "name": "event-service", 
+                    "url": "http://148497bf-ubisafe-publicser-1084-1505059021.us-east-1.elb.amazonaws.com/rest/v1/event/health"
+                },
+                {
+                    "name": "image-service", 
+                    "url": "http://148497bf-ubisafe-publicser-1084-1505059021.us-east-1.elb.amazonaws.com/rest/v1/image/health"
+                },
+                {
+                    "name": "notification-service", 
+                    "url": "http://148497bf-ubisafe-publicser-1084-1505059021.us-east-1.elb.amazonaws.com/rest/v1/notification/health"
+                },
+                {
+                    "name": "iot-to-sqs-service", 
+                    "url": "http://148497bf-ubisafe-publicser-1084-1505059021.us-east-1.elb.amazonaws.com/rest/iot-to-sqs/health"
+                },
+                {
+                    "name": "execution-service", 
+                    "url": "http://148497bf-ubisafe-publicser-1084-1505059021.us-east-1.elb.amazonaws.com/rest/execution/health"
+                },
+                {
+                    "name": "backend-bff-service", 
+                    "url": "http://148497bf-ubisafe-publicser-1084-1505059021.us-east-1.elb.amazonaws.com/bff-backend/healthcheck"
+                }
+            ]
+        },
+        {
+            "name": "INGRESS PRIVADA",
+            "hosts": [
+                {
+                    "name": "customer-service", 
+                    "url": "http://proxyserver-shared.ubisafe-shared.tk:8080/rest/v1/customer/health"
+                },
+                {
+                    "name": "central-service", 
+                    "url": "http://proxyserver-shared.ubisafe-shared.tk:8080/rest/v1/central/health"
+                },
+                {
+                    "name": "event-service", 
+                    "url": "http://proxyserver-shared.ubisafe-shared.tk:8080/rest/v1/event/health"
+                },
+                {
+                    "name": "image-service", 
+                    "url": "http://proxyserver-shared.ubisafe-shared.tk:8080/rest/v1/image/health"
+                },
+                {
+                    "name": "notification-service", 
+                    "url": "http://proxyserver-shared.ubisafe-shared.tk:8080/rest/v1/notification/health"
+                },
+                {
+                    "name": "iot-to-sqs-service", 
+                    "url": "http://proxyserver-shared.ubisafe-shared.tk:8080/rest/iot-to-sqs/health"
+                },
+                {
+                    "name": "execution-service", 
+                    "url": "http://proxyserver-shared.ubisafe-shared.tk:8080/rest/execution/health"
+                },
+                {
+                    "name": "backend-bff-service", 
+                    "url": "http://proxyserver-shared.ubisafe-shared.tk:8080/bff-backend/healthcheck"
+                }
+            ]
+        }
+    ]
+}
