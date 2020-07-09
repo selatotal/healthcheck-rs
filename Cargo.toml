@@ -1,6 +1,6 @@
 [package]
 name = "healthcheck-rs"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Tales Viegas <selatotal@gmail.com>"]
 edition = "2018"
 license = "MIT"
@@ -9,7 +9,7 @@ readme = "README.md"
 homepage = "https://github.com/selatotal/healthcheck-rs"
 repository = "https://github.com/selatotal/healthcheck-rs"
 keywords = ["cli", "devops", "healthcheck"]
-categories = ["command-line-utilities", "sre", "devops"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
