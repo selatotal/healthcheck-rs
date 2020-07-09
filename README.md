@@ -41,15 +41,19 @@ Create a config.json file with the following specification:
 }
 ```
 
-To compile you should install Rust and execute:
+Install using:
 ```bash
-cargo build --release
+cargo install healthcheck-rs
 ```
 
 # Running
-To run, you can use the binary generated in target/ folder or use:
+To run, you can use the binary generated in target/ folder or use (it will use config.json file in the same folder):
 ```bash
-cargo run
+healthcheck-rs
+```
+You can pass config.json file in command-line using:
+```bash
+healthcheck-rs new-config-file.json
 ```
 
 healthcheck-rs will do a HTTP GET request in each service and return an output like this:

@@ -1,3 +1,4 @@
+use std::env;
 use std::fs::File;
 use std::io::prelude::*;
 use std::time::Duration;
@@ -21,12 +22,24 @@ struct HostConfig {
 }
 
 fn main() {
-    println!("Starting Healthcheck!");
     
+    // Check if config file was passed in command line
+    let args: Vec<String> = env::args().collect();
+ 
     // Reading config file
-    let mut file = File::open("config.json").unwrap();
+    let file;
+    if args.len() > 1 {
+        file = File::open(&args[1]);
+    } else {
+        file = File::open("config.json");
+    }
+
+    if let Err(e) = file {
+        panic!("Error opening file: {:?}", e);
+    }
+
     let mut contents = String::new();
-    file.read_to_string(&mut contents).unwrap();
+    file.unwrap().read_to_string(&mut contents).unwrap();
     let config: Config = serde_json::from_str(&contents).unwrap();
 
     // Doing requests
