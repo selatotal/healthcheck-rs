@@ -1,4 +1,8 @@
-# healthcheck-rs
+# healthcheck-rs [![Latest Version]][crates.io]
+
+[Latest Version]: https://img.shields.io/crates/v/healthcheck-rs.svg
+[crates.io]: https://crates.io/crates/healthcheck-rs
+
 
 A Rust executable for simple HTTP check status.
 
