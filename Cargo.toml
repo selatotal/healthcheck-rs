@@ -2,6 +2,7 @@
 name = "healthcheck-rs"
 version = "0.1.0"
 authors = ["Tales Viegas <selatotal@gmail.com>"]
+edition = "2018"
 license = "MIT"
 description = "A Rust executable for simple HTTP check status."
 readme = "README.md"
