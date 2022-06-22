@@ -1,6 +1,6 @@
 [package]
 name = "healthcheck-rs"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Tales Viegas <selatotal@gmail.com>"]
 edition = "2018"
 license = "MIT"
@@ -14,4 +14,4 @@ categories = ["command-line-utilities"]
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-reqwest = { version = "0.10", features = ["blocking"] }
+reqwest = { version = "0.11.10", features = ["blocking"] }
