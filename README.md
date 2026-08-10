@@ -10,7 +10,7 @@ healthcheck-rs use a config file containing URLs and check if the return of HTTP
 
 # Configure and build
 
-Create a config.json file with the following specification:
+Create a healthcheck-rs.json file with the following specification:
 
 ```json
 {
@@ -51,14 +51,18 @@ cargo install healthcheck-rs
 ```
 
 # Running
-To run, you can use the binary generated in target/ folder or use (it will use config.json file in the same folder):
+To run, you can use the binary generated in target/ folder or use (it will use healthcheck-rs.json file in the same folder):
 ```bash
 healthcheck-rs
 ```
-You can pass config.json file in command-line using:
+You can pass a different config file in command-line using:
 ```bash
 healthcheck-rs new-config-file.json
 ```
+
+The config file used to be named `config.json`. That name is still read as a fallback when no
+`healthcheck-rs.json` is present, printing a deprecation warning — rename your file to keep working
+when the fallback is removed.
 
 healthcheck-rs will do a HTTP GET request in each service and return an output like this:
 
