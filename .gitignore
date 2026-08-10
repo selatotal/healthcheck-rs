@@ -24,3 +24,8 @@ Cargo.lock
 
 /config/
 # End of https://www.toptal.com/developers/gitignore/api/rust,code
+
+### Claude Code ###
+CLAUDE.md
+CLAUDE.local.md
+.claude/
